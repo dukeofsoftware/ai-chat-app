@@ -1,7 +1,6 @@
 "use client"
 
 import { FC, useEffect, useState } from "react"
-import { usePathname, useRouter } from "next/navigation"
 import LastPrompt from "@/app/(dashboard)/dashboard/chat/[roomId]/LastPrompt"
 import MessageStream from "@/app/(dashboard)/dashboard/chat/[roomId]/MessageStream"
 import useScrollBottom from "react-scroll-bottom-hook"

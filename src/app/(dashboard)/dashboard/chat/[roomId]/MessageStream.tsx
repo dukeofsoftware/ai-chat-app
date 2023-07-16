@@ -2,7 +2,6 @@
 
 import { FC, useEffect, useRef } from "react"
 import Image from "next/image"
-import useScrollBottom from "react-scroll-bottom-hook"
 
 interface MessageStreamProps {
   response?: string
