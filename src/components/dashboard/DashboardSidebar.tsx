@@ -1,13 +1,11 @@
-'use client'
+"use client"
 
-import { FC } from 'react'
+import { FC } from "react"
 
 interface DashboardSidebarProps {}
 
 const DashboardSidebar: FC<DashboardSidebarProps> = ({}) => {
-  return <>
-    DashboardSidebar
-  </>
+  return <>DashboardSidebar</>
 }
 
 export default DashboardSidebar

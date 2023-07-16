@@ -1,5 +1,5 @@
 export default function useServerSentEvents<
-  QueryParams extends Record<any, any>
+  QueryParams extends Record<any, any>,
 >({
   baseUrl,
   config,

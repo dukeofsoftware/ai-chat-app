@@ -1,26 +1,27 @@
 "use client"
-import { FC, useEffect, useRef } from 'react';
-import Image from 'next/image';
-import useScrollBottom from 'react-scroll-bottom-hook'
+
+import { FC, useEffect, useRef } from "react"
+import Image from "next/image"
+import useScrollBottom from "react-scroll-bottom-hook"
 
 interface MessageStreamProps {
-  response?: string;
+  response?: string
 }
 
 const MessageStream: FC<MessageStreamProps> = ({ response }) => {
-  if (!response) return null;
+  if (!response) return null
 
   return (
-    <div className={`flex flex-row-reverse mt-12 container w-full `}>
-      <div className='relative rounded-full h-12 w-12'>
-        <Image src={"/logo.png"} alt='ai' fill className='rounded-md mr-3' />
+    <div className={`container mt-12 flex w-full flex-row-reverse `}>
+      <div className="relative h-12 w-12 rounded-full">
+        <Image src={"/logo.png"} alt="ai" fill className="mr-3 rounded-md" />
       </div>
-      <div className='p-4 my-3 mr-2 bg-gray-700 rounded-md w-full'>
+      <div className="my-3 mr-2 w-full rounded-md bg-gray-700 p-4">
         {/* Render the response text here */}
         {response}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default MessageStream;
+export default MessageStream

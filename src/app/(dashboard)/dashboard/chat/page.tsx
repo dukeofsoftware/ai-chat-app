@@ -1,18 +1,15 @@
-import { db } from '@/lib/db'
-import { FC } from 'react'
+import { FC } from "react"
 
-interface pageProps { }
+import { db } from "@/lib/db"
 
-const Page: FC<pageProps> = ({ }) => {
+interface pageProps {}
 
-
-  return <div className='h-full w-full flex items-center justify-center'>
-
-    <h2 className='text-2xl text-center'>
-      You are not in a chat room
-    </h2>
-
-  </div>
+const Page: FC<pageProps> = ({}) => {
+  return (
+    <div className="flex h-full w-full items-center justify-center">
+      <h2 className="text-center text-2xl">You are not in a chat room</h2>
+    </div>
+  )
 }
 
 export default Page

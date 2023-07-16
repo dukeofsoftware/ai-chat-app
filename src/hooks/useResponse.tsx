@@ -1,19 +1,19 @@
-import { create } from 'zustand';
+import { create } from "zustand"
 
 type ResponseState = {
-    response: string;
+  response: string
 
-    setResponse: (response: string) => void;
-};
+  setResponse: (response: string) => void
+}
 type PromptState = {
-    prompt: string;
-    setPrompt: (prompt: string) => void;
+  prompt: string
+  setPrompt: (prompt: string) => void
 }
 export const useResponse = create<ResponseState>()((set) => ({
-    response: '',
-    setResponse: (response) => set({ response }),
-}));
+  response: "",
+  setResponse: (response) => set({ response }),
+}))
 export const usePrompt = create<PromptState>()((set) => ({
-    prompt: '',
-    setPrompt: (prompt) => set({ prompt }),
-}));
+  prompt: "",
+  setPrompt: (prompt) => set({ prompt }),
+}))

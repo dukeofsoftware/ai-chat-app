@@ -1,36 +1,33 @@
-'use client'
+"use client"
 
-import { usePrompt } from '@/hooks/useResponse'
-import { FC } from 'react'
-import Image from 'next/image'
+import { FC } from "react"
+import Image from "next/image"
+import { usePrompt } from "@/hooks/useResponse"
+
 interface LastPromptProps {
-    userImage?: string
+  userImage?: string
 }
 
-const LastPrompt: FC<LastPromptProps> = ({
-    userImage
-}) => {
-    const prompt = usePrompt()
+const LastPrompt: FC<LastPromptProps> = ({ userImage }) => {
+  const prompt = usePrompt()
 
-    if (prompt.prompt === "") return null
-    return <div className={`flex container `}>
+  if (prompt.prompt === "") return null
+  return (
+    <div className={`container flex `}>
+      <div className="relative h-12 w-12 rounded-full">
+        <Image
+          src={userImage || ""}
+          alt="ai"
+          fill
+          className="mr-3 rounded-md"
+        />
+      </div>
 
-
-        <div className='relative rounded-full h-12 w-12'>
-            <Image
-                src={userImage || ""}
-                alt='ai'
-                fill
-                className='rounded-md mr-3'
-            />
-        </div>
-
-
-        <div className='p-4 my-3 mr-2 bg-gray-700 rounded-md'>
-            <p>{prompt.prompt}</p>
-        </div>
+      <div className="my-3 mr-2 rounded-md bg-gray-700 p-4">
+        <p>{prompt.prompt}</p>
+      </div>
     </div>
-
+  )
 }
 
 export default LastPrompt

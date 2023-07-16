@@ -36,7 +36,7 @@ const handler = async (
         model: "gpt-3.5-turbo",
         messages: [
           { role: "system", content: "You are a helpful assistant." },
-          ...(JSON.parse(history)),
+          ...JSON.parse(history),
           { role: "user", content: prompt },
         ],
         max_tokens: 500,

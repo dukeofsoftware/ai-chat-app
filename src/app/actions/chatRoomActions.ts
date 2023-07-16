@@ -1,10 +1,11 @@
 "use server"
 
+import { revalidatePath } from "next/cache"
+import { redirect } from "next/navigation"
 import { currentUser } from "@clerk/nextjs"
 
 import { db } from "@/lib/db"
-import { redirect } from 'next/navigation'
-import { revalidatePath } from "next/cache"
+
 export const getChatRooms = async (userId: string) => {
   try {
     const rooms = await db.chatRoom.findMany({
@@ -41,10 +42,8 @@ export const deleteChatRoom = async (id: string) => {
       },
     })
 
-    revalidatePath('/dashboard/chat')
-    redirect('/dashboard/chat')
-
-
+    revalidatePath("/dashboard/chat")
+    redirect("/dashboard/chat")
   } catch (error: any) {
     throw new Error(error)
   }
