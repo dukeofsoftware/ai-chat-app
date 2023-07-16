@@ -12,7 +12,6 @@ interface pageProps {
   }
 }
 export const revalidate = 0
-export const cache = "no-store"
 
 const Page: FC<pageProps> = async ({ params }) => {
   const user = await currentUser()
