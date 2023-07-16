@@ -83,8 +83,5 @@ const handler = async (
   }
 }
 
-export const config = {
-  runtime: "edge",
-}
-
+export const runtime = "edge"
 export { handler as GET, handler as POST }
