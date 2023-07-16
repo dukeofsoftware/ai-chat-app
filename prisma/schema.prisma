@@ -1,0 +1,33 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+// chat bot
+
+model ChatRoom {
+  id        String    @id @default(uuid())
+  userId    String
+  name      String
+  messages  Message[] @relation("ChatRoomToMessage")
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model Message {
+  id         String   @id @default(uuid())
+  userId     String
+  role       String
+  chatRoom   ChatRoom @relation("ChatRoomToMessage", fields: [chatRoomId], references: [id], onDelete: Cascade)
+  chatRoomId String
+  content    String   @db.Text
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([chatRoomId])
+}
