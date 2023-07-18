@@ -14,7 +14,8 @@ https://ai-chat-app-nu.vercel.app/
   
 ## Screenshots
 
-![Uygulama Ekran Görüntüsü](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![Ekran Görüntüsü - 2023-07-18 22-36-45](https://github.com/dukeofsoftware/ai-chat-app/assets/89215036/ea75fd5a-871f-4aaf-8b2a-63f38ff04ee7)
+
 
   
 
